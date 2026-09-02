@@ -1,11 +1,12 @@
 require("dotenv").config();
 const express = require("express");
+const getSingle = require("./routes/get_single");
 const patchProduct = require("./routes/patch");
 const errorHandler = require("./middleware/error_handler");
 const inventory = require("./routes/data/inventory");
 
 const app = express();
-const getSingle = require("./routes/get_single");
+
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());

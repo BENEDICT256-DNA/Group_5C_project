@@ -3,6 +3,7 @@ const express = require("express");
 const getAll = require("./routes/get_all");
 const getSingle = require("./routes/get_single");
 const patchProduct = require("./routes/patch");
+const deleteProduct = require("./routes/delete");
 const errorHandler = require("./middleware/error_handler");
 const inventory = require("./routes/data/inventory");
 
@@ -15,7 +16,7 @@ app.use("/", getAll);
 app.use('/', getSingle);
 
 app.use('/', patchProduct);
-
+app.use('/', deleteProduct);
 // Error handler must be last
 app.use(errorHandler);
 

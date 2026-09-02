@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const getAll = require("./routes/get_all");
 const getSingle = require("./routes/get_single");
 const patchProduct = require("./routes/patch");
 const errorHandler = require("./middleware/error_handler");
@@ -10,6 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use("/", getAll);
 app.use('/', getSingle);
 
 app.use('/', patchProduct);
